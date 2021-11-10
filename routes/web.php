@@ -27,7 +27,10 @@ Route::get('/', function () {
 //       'content'=>'test content2'
 //    ]);
 
-    $post=Post::all();
+//    $post=Post::all();
+//    dd($post);
+
+    $post=Post::find(1);
     dd($post);
 
 });
