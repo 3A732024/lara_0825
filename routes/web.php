@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Models\Post;
+use App\Models\Comment;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,11 +67,18 @@ Route::get('/', function () {
 //    $lastPost=Post::orderBy('id', 'DESC')->first();
 //    dd($lastPost);
 
-    $post=Post::find(4);
-    echo $post->title.'<br><hr>';
-    foreach ($post->comments as $comment){
-        echo $comment->content.'<br>';
-    }
+//    $post=Post::find(4);
+//    echo $post->title.'<br><hr>';
+//    foreach ($post->comments as $comment){
+//        echo $comment->content.'<br>';
+//    }
+
+    $comment=Comment::find(1);
+    echo $comment->content.'<br>';
+    $post=$comment->post;
+    echo $post->id.'<br>';
+    echo $post->title.'<br>';
+    echo $post->content.'<br>';
 
 });
 
